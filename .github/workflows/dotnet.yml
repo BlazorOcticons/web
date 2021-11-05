@@ -24,3 +24,14 @@ jobs:
       run: dotnet build -c Release --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Publish .NET Core Project
+      run: dotnet publish WebApp/WebApp.csproj -c Release -o release
+    - name: Pushes to another repository
+      uses: cpina/github-action-push-to-another-repository@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source-directory: 'release/wwwroot'
+        destination-github-username: 'BlazorOcticons'
+        destination-repository-name: 'BlazorOcticons.github.io'
+        target-branch: main
