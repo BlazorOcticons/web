@@ -5,13 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BlazorOcticons" Version="0.5-preview"/>
+    <PackageReference Include="BlazorOcticons" Version="0.5-preview" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0-rc.2.21480.10" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0-rc.2.21480.10" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Net.Compilers" Version="4.0.0-6.final">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\.nojekyll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
