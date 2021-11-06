@@ -47,7 +47,19 @@ a {text-decoration: none !important;}
 }
 
 .using {
-  color: #569CD5;
+  color: #569CD6;
+}
+
+.attr {
+  color: #9CDCFE;
+}
+
+.attr-val {
+  color: #c8c8c8;
+}
+
+.loader {
+  min-height: 100vh;
 }
 
 .code {

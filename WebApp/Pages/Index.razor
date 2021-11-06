@@ -10,9 +10,9 @@
             BlazorOcticons
           </span>
         </div>
-        <div class="pt-4 pb-4 md-pt-0">
+        <div class="pt-4 pb-4 md-pt-0 max-w-sm">
           <span class="fs-x-large sm-fs-medium lh-150">
-            BlazorOcticons is an easy-to-use GitHub Octicons built as customizable <span class="px-2 py-1 br-2 bg-color-white color-1">.razor</span> components
+            BlazorOcticons is an easy-to-use GitHub Octicons built as customizable <span class="px-2 py-1 br-2 bg-color-white color-1"><b>.razor</b></span> components
           </span>
         </div>
       </div>
@@ -29,24 +29,15 @@
       </div>
       <div class="py-3">
         <span class="fs-x-large md-fs-large">
-          1. Install the <span class="px-2 py-1 br-2 bg-color-white color-1">BlazorOcticons</span> NuGet package
+          1. Install the <b>BlazorOcticons</b> NuGet package
         </span>
       </div>
       <div class="d-flex pt-3 pb-5 md-pt-2 md-pb-4">
-        <div class="py-2 lg-py-0">
-          <div id="copy" class="d-flex p-3 text-decoration-none color-black dark br-3 w-fit-content sm-p-2 sm-br-2 cursor-pointer big-shadow">
-            <ChevronRight16 Size="24" Color="#ccc"/>
-            <div class="d-flex align-items-center justify-content-center pl-2 pr-3 sm-pr-2">
-              <span class="fs-large fw-bold code grey sm-fs-medium"><span class="dotnet">dotnet</span> add package BlazorOcticons</span>
-            </div>
-            <Copy16 Size="24" Color="#ccc"/>
-            <textarea id="input-copy" class="d-none" type="text">dotnet add package BlazorOcticons</textarea>
-          </div>
-        </div>
+        <Clipboard/>
       </div>
       <div class="py-3">
         <span class="fs-x-large md-fs-large">
-          2. In the <span class="px-2 py-1 br-2 bg-color-white color-1">_Imports.razor</span> file add <span class="px-2 py-1 br-2 bg-color-white color-1">@@using BlazorOcticons.Octicons;</span>
+          2. In the <b>_Imports.razor</b> file add <b>@@using BlazorOcticons.Octicons;</b>
         </span>
       </div>
       <div class="d-flex pt-3 pb-5 md-pt-2 md-pb-4">
@@ -75,11 +66,37 @@
           Usage
         </span>
       </div>
+      <div class="py-3">
+        <span class="fs-x-large md-fs-large">
+          Inside your code, use any of GitHub Octicons as <b>.razor</b> components:
+        </span>
+      </div>
+      <div class="w-12 pt-3 pb-5 md-pt-2 md-pb-4">
+        <div class="py-2 lg-py-0">
+          <div class="d-flex flex-direction-row md-flex-direction-column-reverse text-decoration-none color-black dark br-3 sm-br-2 big-shadow">
+            <div class="w-9 md-w-inherit align-items-center justify-content-center p-4 sm-p-3">
+              <span class="fs-large fw-bold code grey md-fs-medium sm-fs-small">
+                &lt;<span class="using">div</span> <span class="attr">class</span>="<span class="attr-val">d-flex align-items-center<br/>
+                  &nbsp;&nbsp;justify-content-center p-3</span>"&gt;
+              </span><br/>
+              <span class="fs-large fw-bold code grey md-fs-medium sm-fs-small">
+                &nbsp;&lt;<span class="dotnet">MarkGithub16</span> <span class="attr">Color</span>="#702AF7" <span class="attr">Size</span>="48"/&gt;
+              </span><br/>
+              <span class="fs-large fw-bold code grey md-fs-medium sm-fs-small">
+                &lt;/<span class="using">div</span>&gt;
+              </span><br/>
+            </div>
+            <div class="w-3 md-w-inherit d-flex align-items-center justify-content-center p-4 sm-p-3 br-3 sm-br-2 bg-color-white">
+              <MarkGithub16 Color="#702AF7" Size="48"/>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="position-relative px-3 md-px-2">
-      <div id="demo" class="py-4">
+      <div id="icons" class="py-4">
         <span class="fw-800 fs-xxx-large md-fs-xx-large color-1">
-          Demo
+          Icons
         </span>
       </div>
       <div class="pb-3">

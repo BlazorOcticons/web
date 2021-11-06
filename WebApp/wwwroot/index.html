@@ -19,8 +19,8 @@
   <meta property="og:title" content="BlazorOcticons" />
   <meta property="og:site_name" content="BlazorOcticons" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:url" content="https://testland.io" />
-  <meta property="og:image" content="https://avatars2.githubusercontent.com/u/71715703?s=200&v=4" />
+  <meta property="og:url" content="https://blazorocticons.net/" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/93588971?s=400&u=f009fec6722447abeaf042f68c336eb1931e0452&v=4" />
   <link href="css/site.css" rel="stylesheet" />
   <link href="css/cssville.css" rel="stylesheet" />
   <link href="WebApp.styles.css" rel="stylesheet" />
@@ -31,20 +31,41 @@
 
 <div class="w-12 mx-auto flex-direction-column">
   <body>
-    <div id="app">Loading...</div>
+    <div id="app">
+      <div class="loader d-flex align-items-center justify-content-center p-4 sm-p-3 br-3 sm-br-2 bg-color-white">
+        <span class="fw-bold color-1">Loading...</span>
+      </div>
+    </div>
 
     <div id="blazor-error-ui">
       An unhandled error has occurred.
       <a href="">Reload</a>
       <a class="dismiss">🗙</a>
     </div>
-    <footer class="text-align-center">
-      <div class="py-3">
-        <span class="p-2">&copy; BlazorOcticons 2021 - visit on <a href="https://github.com/BlazorOcticons" target="_blank">GitHub</a></span>
+    <footer class="mx-auto max-w-lg p-3">
+      <div class="d-flex align-items-center justify-content-center py-3">
+        <span class="p-2">
+          &copy; <a href="https://github.com/BlazorOcticons" target="_blank">BlazorOcticons</a> 2021 - hosted by
+          <a href="https://github.com/" target="_blank">GitHub</a>,
+          created by Evgeniy K.
+        </span>
+        <a href="https://github.com/elv1s42" class="h-24px w-24px" rel="noopener" target="_blank">
+          <img class="h-24px w-24px" src="gh.svg" alt="gh" />
+        </a>
+        <a href="https://twitter.com/elv1s42" class="h-24px w-24px ml-2" rel="noopener" target="_blank">
+          <img class="h-24px w-24px" src="tw.svg" alt="tw" />
+        </a>
       </div>
     </footer>
     <script src="_framework/blazor.webassembly.js"></script>
     <script src="js/site.js"></script>
+    <script>
+      window.clipboardCopy = {
+        copyText: function (text) {
+          navigator.clipboard.writeText(text).then(function () { }).catch(function (error) { console.log(error); });
+        }
+      }
+    </script>
   </body>
 </div>
 

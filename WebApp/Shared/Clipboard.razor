@@ -1,0 +1,43 @@
+﻿@using System.Threading
+@inject IJSRuntime _jsRuntime
+@implements IDisposable
+@using BlazorOcticons.Octicons;
+
+<div class="py-2 lg-py-0">
+  <div class="d-flex p-3 text-decoration-none color-black dark br-3 w-fit-content sm-p-2 sm-br-2 cursor-pointer big-shadow" @onclick="CopyToClipboard">
+    <ChevronRight16 Size="24" Color="#ccc"/>
+    <div class="d-flex align-items-center justify-content-center pl-2 pr-3 sm-pr-2">
+      <span class="fs-large fw-bold code grey sm-fs-medium"><span class="dotnet">dotnet</span> add package BlazorOcticons</span>
+    </div>
+    @if(!_state.Copied)
+    {
+      <Copy16 Size="24" Color="#ccc"/>
+    }
+    else
+    {
+      <CheckCircle16 Size="24" Color="#8BC34A"/>
+    }
+  </div>
+</div>
+
+@code {
+  CancellationTokenSource _cts = new();
+  State _state = new(Copied: false);
+
+  async Task CopyToClipboard()
+  {
+    var temp = _state;
+    _state = new(Copied: true);
+    await _jsRuntime.InvokeVoidAsync("clipboardCopy.copyText", "dotnet add package BlazorOcticons");
+    await Task.Delay(TimeSpan.FromSeconds(2), _cts.Token);
+    _state = temp;
+  }
+
+  public void Dispose()
+  {
+    _cts.Cancel(); // Cancel Task.Delay
+    _cts.Dispose();
+  }
+
+  record State(bool Copied = false);
+}
