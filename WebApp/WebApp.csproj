@@ -2,21 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <UserSecretsId>4147d4bf-905d-434c-8f04-c26c0f755d30</UserSecretsId>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Remove="IconsCollection.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="CNAME" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="CNAME">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="BlazorOcticons" Version="0.9.0" />
@@ -32,6 +19,11 @@
     <Content Update="wwwroot\.nojekyll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="CNAME">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
