@@ -1,4 +1,5 @@
 ﻿@page "/"
+@inject IJSRuntime JSRuntime
 @using WebApp.Shared;
 
 @code {
@@ -8,8 +9,14 @@
 }
 
 <Header />
-<div class="w-12 max-w-lg mx-auto pt-5 ">
+<div class="w-12 max-w-lg mx-auto pt-5" id="random-icons-container">
   <div class="d-flex flex-direction-column pb-4">
+    @for (int i = 0; i < 50; i++)
+    {
+      <div class="random-icon">
+        <RandomIcon />
+      </div>
+    }
     <div class="d-flex text-align-center py-4 px-5 lg-px-3 sm-px-2">
       <div class="py-5 md-py-4 position-relative mx-auto max-w-md">
         <div class="py-2">
@@ -139,3 +146,14 @@
     </div>
   </div>
 </div>
+
+@code {
+
+  protected override async Task OnAfterRenderAsync(bool firstRender)
+  {
+    if (firstRender)
+    {
+      await JSRuntime.InvokeVoidAsync("addRandomIcons");// Initialize main.js after site completely loaded
+    }
+  }
+}

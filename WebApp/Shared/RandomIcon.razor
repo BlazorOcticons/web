@@ -1,0 +1,17 @@
+﻿@using BlazorOcticons.Octicons;
+@using System.Reflection
+
+<DynamicComponent 
+  Type="@Assembly.Load("BlazorOcticons").GetTypes().FirstOrDefault(t => t.FullName != null && t.FullName.EndsWith($".{IconName}"))"
+  Parameters="@GetParams()"/> 
+
+@code {
+    
+    public string IconName = Icons.All[new Random().Next(0, Icons.All.Length)];
+    
+    private Dictionary<string, object> GetParams()
+    {
+      var p = new Dictionary<string, object> { { "Color", "#d7e8f7" }, { "Size", new Random().Next(20, 50) } };
+      return p;
+    }
+}

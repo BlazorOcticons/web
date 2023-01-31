@@ -6,7 +6,7 @@
 
 html, body {
   color: #343A40;
-  background-color: #FFF0F8;
+  background-color: #f0f8ff;
   margin: 0 !important;
   position: relative;
   font-family: 'Roboto', sans-serif !important;
@@ -100,6 +100,10 @@ a {text-decoration: none !important;}
   -ms-animation: rotating 2s linear infinite;
   -o-animation: rotating 2s linear infinite;
   animation: rotating 2s linear infinite;
+}
+
+.random-icon {
+  position: absolute;
 }
 
 .code {
