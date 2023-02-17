@@ -19,38 +19,23 @@ function placeRandomIcons() {
   const parent = document.getElementById('random-icons-container');
   const winWidth = parent.offsetWidth;
   const winHeight = parent.offsetHeight;
-
   let offsets = [];
   const step = 80;
-  for (var i = 0; i < Math.round(winWidth / step); i++) {
-    for (var j = 0; j < Math.round(winHeight / step); j++) {
-      offsets[offsets.length] = { top: j * step + getRandomNumber(0, 25), left: i * step + getRandomNumber(0, 25) };
+  var iMax = Math.round(winWidth / step);
+  var jMax = Math.round(winHeight / step);
+  for (var i = 0; i < iMax; i++) {
+    for (var j = 0; j < jMax; j++) {
+      offsets[offsets.length] = { top: j * step, left: i * step, i: i, j: j};
     }
   }
-  offsets = shuffle(offsets);
-  for (var i = 0; i < divs.length; i++) {
-    
-    var thisDiv = divs[i];
-    
-    if (offsets[i] == undefined) {
+  for (var k = 0; k < divs.length; k++) {
+    var thisDiv = divs[k];
+    if (offsets[k] == undefined) {
       thisDiv.style.top = "-1000px";
       thisDiv.style.left = "-1000px";
     } else {
-      thisDiv.style.top = offsets[i].top + "px";
-      thisDiv.style.left = offsets[i].left + "px";
+      thisDiv.style.top = offsets[k].top + step / 2 - thisDiv.offsetHeight / 2 + "px";
+      thisDiv.style.left = offsets[k].left + step / 2 - thisDiv.offsetWidth / 2 + "px";
     }
-
   }
-}
-function shuffle(a) {
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-// function that returns a random number between a min and max
-function getRandomNumber(min, max) {
-  return Math.random() * (max - min) + min;
 }
