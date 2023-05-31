@@ -10,6 +10,7 @@ html, body {
   margin: 0 !important;
   position: relative;
   font-family: 'Roboto', sans-serif !important;
+  width: 100%;
 }
 
 a {text-decoration: none !important;}
