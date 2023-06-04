@@ -29,58 +29,9 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.counter.dev/script.js" data-id="9ee700d3-02c7-4729-ad2c-8fe4a56d9f01" data-utcoffset="3"></script>
   <script async src="//static.getclicky.com/101411922.js"></script>
-  <script type="text/javascript">
-    window.smartlook ||
-    (function(d) {
-      var o = smartlook = function() { o.api.push(arguments) };
-      const h = d.getElementsByTagName('head')[0];
-      const c = d.createElement('script');
-      o.api = new Array();
-      c.async = true;
-      c.type = 'text/javascript';
-      c.charset = 'utf-8';
-      c.src = 'https://web-sdk.smartlook.com/recorder.js';
-      h.appendChild(c);
-    })(document);
-    smartlook('init', 'f27913f01ddf2a7bbcc51200a21ed4d8ac2dcf54', { region: 'eu' });
-  </script>
 </head>
 
 <body>
-<script type="text/javascript">
-  (function(window, document, dataLayerName, id) {
-    window[dataLayerName] = window[dataLayerName] || [], window[dataLayerName].push({ start: (new Date).getTime(), event: "stg.start" });
-    const scripts = document.getElementsByTagName('script')[0];
-    const tags = document.createElement('script');
-
-    function stgCreateCookie(a, b, c) {
-      var d = "";
-      if (c) {
-        const e = new Date;
-        e.setTime(e.getTime() + 24 * c * 60 * 60 * 1e3), d = `; expires=${e.toUTCString()}`;
-      }
-      document.cookie = a + "=" + b + d + "; path=/"
-    }
-
-    const isStgDebug = (window.location.href.match("stg_debug") || document.cookie.match("stg_debug")) && !window.location.href.match("stg_disable_debug");
-    stgCreateCookie("stg_debug", isStgDebug ? 1 : "", isStgDebug ? 14 : -1);
-    const qP = [];
-    dataLayerName !== "dataLayer" && qP.push(`data_layer_name=${dataLayerName}`), isStgDebug && qP.push("stg_debug");
-    const qPString = qP.length > 0 ? (`?${qP.join("&")}`) : "";
-    tags.async = !0, tags.src = `https://elv1s42.containers.piwik.pro/${id}.js${qPString}`, scripts.parentNode.insertBefore(tags, scripts);
-    !function(a, n, i) {
-      a[n] = a[n] || {};
-      for (let c = 0; c < i.length; c++)
-        !function(i) {
-          a[n][i] = a[n][i] || {}, a[n][i].api = a[n][i].api ||
-            function() {
-              const a = [].slice.call(arguments, 0);
-              "string" == typeof a[0] && window[dataLayerName].push({ event: n + "." + i + ":" + a[0], parameters: [].slice.call(arguments, 1) })
-            }
-        }(i[c])
-    }(window, "ppms", ["tm", "cm"]);
-  })(window, document, 'dataLayer', '729b5474-0b55-4ffe-b78c-c5e8e1a5bb59');
-</script>
 <div class="w-12 mx-auto flex-direction-column">
   <div id="app">
     <div class="loader d-flex align-items-center justify-content-center p-4 sm-p-3 br-3 sm-br-2 bg-color-white">
