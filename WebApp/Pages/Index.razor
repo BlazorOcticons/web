@@ -144,7 +144,8 @@
       <div class="pb-3">
         <span class="fs-x-large md-fs-large">All the icons below are <b>.razor</b> components</span>
       </div>
-      <IconsCollection />
+      <IconPopup @ref="popupRef" IconName="@SelectedIcon"/>
+      <IconsCollection OnClick="HandlePopupClick" />
     </div>
   </div>
 </div>
@@ -157,5 +158,21 @@
     {
       await JSRuntime.InvokeVoidAsync("placeRandomIcons");// Initialize main.js after site completely loaded
     }
+  }
+  
+  private async Task HandlePopupClick(string arg)
+  {
+    SelectedIcon = arg;
+    ShowPopup();
+    await InvokeAsync(StateHasChanged);
+  }
+
+  public string SelectedIcon { get; set; } = "";
+  
+  private IconPopup popupRef;
+
+  private void ShowPopup()
+  {
+    popupRef.Show();
   }
 }
