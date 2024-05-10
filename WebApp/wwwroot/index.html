@@ -29,52 +29,90 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.counter.dev/script.js" data-id="9ee700d3-02c7-4729-ad2c-8fe4a56d9f01" data-utcoffset="3"></script>
   <script async src="https://analytics.umami.is/script.js" data-website-id="5f3c527a-c7af-4db8-b01f-85e107a1adc7"></script>
+  <script src="https://cdn.jsdelivr.net/gh/EasyCookies/EasyCookies@0.0.2/easyCookies.js"></script>
 </head>
 
 <body>
-<div class="w-12 mx-auto flex-direction-column">
-  <div id="app">
-    <div class="loader d-flex align-items-center justify-content-center p-4 sm-p-3 br-3 sm-br-2 bg-color-white">
-      <div class="d-flex flex-direction-column">
-        <div class="d-flex d-flex align-items-center justify-content-center pb-3">
-          <img class="d-flex rotating h-32px w-32px" src="./time.svg" alt="time"/>
-        </div>
-        <div class="d-flex">
-          <span class="fw-bold color-1">Loading...</span>
+
+<script>
+  window.easyCookiesBanner = new EasyCookies.Banner({
+    scripts: {
+      gtag: ''
+    },
+    data: {
+      title: "This website uses cookies 🍪🍪🍪",
+      text: "We use cookies to improve your experience.",
+      acceptBtnText: 'Accept cookies',
+      rejectBtnText: 'Reject'
+    },
+    styles: {
+      banner: {
+        borderRadius: '10px',
+        zIndex: '9999',
+        fontFamily: "'Roboto', sans-serif",
+        color: "black",
+        maxWidth: "450px",
+        boxShadow: "rgba(144, 164, 174, 0.3) 0px 6px 12px 0px"
+      },
+      rejectBtn: {
+        borderRadius: '8px',
+      },
+      acceptBtn: {
+        borderRadius: '8px',
+        backgroundColor: 'var(--color-1)',
+        color: 'white',
+        fontWeight: 'bold',
+        hover: {
+          opacity: '0.8',
+        }
+      }
+    }
+  });
+  window.easyCookiesBanner.init();
+</script>
+  <div class="w-12 mx-auto flex-direction-column">
+    <div id="app">
+      <div class="loader d-flex align-items-center justify-content-center p-4 sm-p-3 br-3 sm-br-2 bg-color-white">
+        <div class="d-flex flex-direction-column">
+          <div class="d-flex d-flex align-items-center justify-content-center pb-3">
+            <img class="d-flex rotating h-32px w-32px" src="./time.svg" alt="time" />
+          </div>
+          <div class="d-flex">
+            <span class="fw-bold color-1">Loading...</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div id="blazor-error-ui">
-    An unhandled error has occurred.
-    <a href="">Reload</a>
-    <a class="dismiss">🗙</a>
-  </div>
-  <footer class="mx-auto max-w-lg p-3">
-    <div class="d-flex align-items-center justify-content-center py-3">
-      <span class="p-2">
-        &copy; <a href="https://github.com/BlazorOcticons" target="_blank">BlazorOcticons</a> 2023 - hosted by
-        <a href="https://github.com/" target="_blank">GitHub</a>, protected by <a href="https://cloudback.it/" target="_blank">Cloudback</a>,
-        created by Evgeniy K.
-      </span>
-      <a href="https://github.com/elv1s42" class="h-24px w-24px scale-on-hover" rel="noopener noreferrer nofollow" target="_blank">
-        <img class="h-24px w-24px" src="gh.svg" alt="gh"/>
-      </a>
-      <a href="https://twitter.com/elv1s42" class="h-24px w-24px ml-2 scale-on-hover" rel="noopener noreferrer nofollow" target="_blank">
-        <img class="h-24px w-24px" src="tw.svg" alt="tw"/>
-      </a>
+    <div id="blazor-error-ui">
+      An unhandled error has occurred.
+      <a href="">Reload</a>
+      <a class="dismiss">🗙</a>
     </div>
-  </footer>
-  <script src="_framework/blazor.webassembly.js"></script>
-  <script src="js/site.js"></script>
-  <script>
-    window.clipboardCopy = {
-      copyText: function(text) {
-        navigator.clipboard.writeText(text).then(function() {}).catch(function(error) { console.log(error); });
+    <footer class="mx-auto max-w-lg p-3">
+      <div class="d-flex align-items-center justify-content-center py-3">
+        <span class="p-2">
+          &copy; <a href="https://github.com/BlazorOcticons" target="_blank">BlazorOcticons</a> 2023 - hosted by
+          <a href="https://github.com/" target="_blank">GitHub</a>, protected by <a href="https://cloudback.it/" target="_blank">Cloudback</a>,
+          created by Evgeniy K.
+        </span>
+        <a href="https://github.com/elv1s42" class="h-24px w-24px scale-on-hover" rel="noopener noreferrer nofollow" target="_blank">
+          <img class="h-24px w-24px" src="gh.svg" alt="gh" />
+        </a>
+        <a href="https://twitter.com/elv1s42" class="h-24px w-24px ml-2 scale-on-hover" rel="noopener noreferrer nofollow" target="_blank">
+          <img class="h-24px w-24px" src="tw.svg" alt="tw" />
+        </a>
+      </div>
+    </footer>
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="js/site.js"></script>
+    <script>
+      window.clipboardCopy = {
+        copyText: function (text) {
+          navigator.clipboard.writeText(text).then(function () { }).catch(function (error) { console.log(error); });
+        }
       }
-    }
-  </script>
-</div>
+    </script>
+  </div>
 </body>
 </html>
