@@ -1,9 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <UserSecretsId>4147d4bf-905d-434c-8f04-c26c0f755d30</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <TrimmerRootAssembly Include="BlazorOcticons" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="wwwroot\CNAME">
@@ -12,14 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BlazorOcticons" Version="1.0.6" />
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="7.0.18" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.10" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.10" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="4.8.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+    <PackageReference Include="BlazorOcticons" Version="1.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.0" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>

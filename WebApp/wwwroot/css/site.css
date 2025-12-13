@@ -183,3 +183,13 @@ a {text-decoration: none !important;}
   background-color: white;
   padding: 20px;
 }
+
+.search-input {
+  border: 1px solid #dee2e6;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  border-color: var(--color-1);
+}

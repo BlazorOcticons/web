@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dotnet build:*)",
+      "WebFetch(domain:www.nuget.org)",
+      "Bash(dotnet nuget:*)",
+      "Bash(dotnet restore:*)",
+      "Bash(dir \"C:\\GitHub\\BlazorOcticons-web\\WebApp\\obj\\Debug\\net9.0\\generated\" /s /b)",
+      "Bash(dir \"C:\\GitHub\\BlazorOcticons-web\\WebApp\\obj\\Debug\\net9.0\" /b)",
+      "Bash(dotnet list:*)",
+      "Bash(dir \"%USERPROFILE%\\.nuget\\packages\\blazorocticons\\1.2.0\" /s /b)",
+      "Bash(findstr:*)",
+      "Bash(dotnet run:*)",
+      "Bash(cat:*)"
+    ]
+  }
+}
