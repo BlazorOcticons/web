@@ -168,7 +168,25 @@
         }
       }
     </script>
-    <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
+    <script src="_framework/blazor.webassembly#[.{fingerprint}].js" autostart="false"></script>
+    <script>
+      // Boot after the static content paints, so WebAssembly startup can't delay first paint.
+      var blazorStarted = false;
+      function startBlazor() {
+        if (!blazorStarted) {
+          blazorStarted = true;
+          Blazor.start();
+        }
+      }
+      if (window.PerformanceObserver && PerformanceObserver.supportedEntryTypes.includes('paint')) {
+        new PerformanceObserver(function (list) {
+          if (list.getEntriesByName('first-contentful-paint').length) {
+            startBlazor();
+          }
+        }).observe({ type: 'paint', buffered: true });
+      }
+      setTimeout(startBlazor, 1000);
+    </script>
   </div>
 </body>
 </html>
