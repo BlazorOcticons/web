@@ -6,6 +6,10 @@ window.addEventListener('resize', function (event) {
 function placeRandomIcons() {
   const divs = document.getElementsByClassName('random-icon');
   const parent = document.getElementById('random-icons-container');
+  // Resize can fire before Blazor has rendered the container.
+  if (!parent) {
+    return;
+  }
   const winWidth = parent.offsetWidth;
   const winHeight = parent.offsetHeight;
   let offsets = [];
