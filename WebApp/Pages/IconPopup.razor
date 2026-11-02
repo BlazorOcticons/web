@@ -1,17 +1,16 @@
-﻿@using System.Reflection
-<div class="popup-container" style="display: @PopupDisplay" @onclick="ClosePopupOnClickOutside">
+﻿<div class="popup-container" style="display: @PopupDisplay" @onclick="ClosePopupOnClickOutside">
   <div class="popup-content br-4" @onclick:stopPropagation>
     <div class="d-flex">
       <div class="flex-grow-1"></div>
-      <a @onclick="Close" class="cursor-pointer scale-on-hover br-2">
+      <button type="button" @onclick="Close" class="icon-button scale-on-hover br-2" aria-label="Close">
         <X24/>
-      </a>
+      </button>
     </div>
     @if (IconType != null)
     {
       <div class="w-12 bg-color-white">
         <div class="max-w-lg mx-auto d-flex flex-direction-column px-3" style="width: 90%">
-          <div id="usage" class="py-4">
+          <div class="py-4">
             <span class="fw-800 fs-xxx-large md-fs-xx-large color-1">
               @IconName
             </span>
@@ -61,7 +60,7 @@
     {
       <div class="w-12 bg-color-white">
         <div class="w-12 max-w-lg mx-auto d-flex flex-direction-column py-5 px-3">
-          <div id="usage" class="py-4">
+          <div class="py-4">
             <span class="fw-800 fs-xxx-large md-fs-xx-large color-1">
               @IconName does not exist
             </span>
@@ -81,7 +80,7 @@
 
   readonly Dictionary<string, object> _params = new() { { "Color", "#702AF7" }, {"Size", 48} };
   private bool isClickInside { get; set; } = false;
-  Type IconType => Assembly.Load("BlazorOcticons").GetTypes().FirstOrDefault(t => t.FullName != null && t.FullName.EndsWith($".{IconName}"));
+  Type IconType => IconCatalog.Types.GetValueOrDefault(IconName);
 
   private async Task ClosePopupOnClickOutside()
   {

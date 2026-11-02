@@ -1,5 +1,4 @@
 @using WebApp.Shared;
-@using System.Reflection;
 
 @code{
 
@@ -10,11 +9,6 @@
 
   private string _searchText = "";
 
-  private Type GetIconType(string iconName)
-  {
-    return Type.GetType($"BlazorOcticons.Octicons.{iconName}, BlazorOcticons");
-  }
-
   private static Dictionary<int, string[]> _iconsBySize;
 
   private static Dictionary<int, string[]> GetIconsBySize()
@@ -22,16 +16,10 @@
     if (_iconsBySize != null)
       return _iconsBySize;
 
-    var assembly = Assembly.Load("BlazorOcticons");
-    var iconTypes = assembly.GetTypes()
-        .Where(t => t.Namespace == "BlazorOcticons.Octicons" && t.IsClass)
-        .Select(t => t.Name)
-        .ToList();
-
     _iconsBySize = new Dictionary<int, string[]>();
 
     // Group icons by their size suffix (e.g., "Alert16" -> 16)
-    foreach (var iconName in iconTypes)
+    foreach (var iconName in IconCatalog.Names)
     {
       // Extract size from icon name (last digits)
       var sizeStr = new string(iconName.Reverse().TakeWhile(char.IsDigit).Reverse().ToArray());
@@ -79,9 +67,9 @@
         @foreach (var iconName in filteredIcons)
         {
           <div class="p-3">
-            <a class="cursor-pointer" @onclick="@(async () => await OnClick.Invoke(iconName))">
-              <DynamicComponent Type="GetIconType(iconName)" />
-            </a>
+            <button type="button" class="icon-button" title="@iconName" aria-label="@iconName" @onclick="@(async () => await OnClick.Invoke(iconName))">
+              <DynamicComponent Type="IconCatalog.Types[iconName]" />
+            </button>
           </div>
         }
       </div>

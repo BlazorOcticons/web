@@ -2,7 +2,7 @@
 
 <div class="mx-auto max-w-lg py-3 px-5 lg-px-4 md-px-3">
   <div class="d-flex flex-direction-row lg-pb-0 position-relative" style="z-index: 100">
-    <a href="/" class="d-flex color-1">
+    <a href="/" class="d-flex color-1" aria-label="BlazorOcticons home">
       <Logo Size="64"/>
       <div class="d-flex align-items-center justify-content-center px-3 sm-d-none">
         <span class="fs-x-large fw-bold">BlazorOcticons</span>
@@ -13,21 +13,21 @@
         @if (ShowMenuItems)
         {
           <div class="d-flex align-items-center justify-content-center">
-            <a type="button" class="d-flex px-3 lg-px-2 py-2 text-decoration-none br-2 scale-on-hover color-1 cursor-pointer" onclick="scrollToId('install');">
+            <a href="#install" class="d-flex px-3 lg-px-2 py-2 text-decoration-none br-2 scale-on-hover color-1">
               <div class="d-flex align-items-center justify-content-center px-2">
                 <span class="fs-large fw-bold">Install</span>
               </div>
             </a>
           </div>
           <div class="d-flex align-items-center justify-content-center">
-            <a type="button" class="d-flex px-3 lg-px-2 py-2 text-decoration-none br-2 scale-on-hover color-1 cursor-pointer" onclick="scrollToId('usage');">
+            <a href="#usage" class="d-flex px-3 lg-px-2 py-2 text-decoration-none br-2 scale-on-hover color-1">
               <div class="d-flex align-items-center justify-content-center px-2">
                 <span class="fs-large fw-bold">Usage</span>
               </div>
             </a>
           </div>
           <div class="d-flex align-items-center justify-content-center">
-            <a type="button" class="d-flex px-3 lg-px-2 py-2 text-decoration-none br-2 scale-on-hover color-1 cursor-pointer" onclick="scrollToId('icons');">
+            <a href="#icons" class="d-flex px-3 lg-px-2 py-2 text-decoration-none br-2 scale-on-hover color-1">
               <div class="d-flex align-items-center justify-content-center px-2">
                 <span class="fs-large fw-bold">Icons</span>
               </div>
